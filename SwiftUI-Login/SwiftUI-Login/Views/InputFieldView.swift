@@ -36,8 +36,7 @@ struct InputFieldView: View {
     }
 }
 
-#Preview {
-  
-    InputFieldView(text: .constant("Test"), title: "FloatVal")
-   
-}
+//#Preview {
+//    InputFieldView(text: $value, title: "val")
+//   
+//}

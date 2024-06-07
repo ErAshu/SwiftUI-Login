@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var userName: String = ""
+    @State var password: String = ""
     var body: some View {
-        @State var userName: String = ""
-        @State var password: String = ""
-        
         VStack {
             Text("Welcome Back")
                 .font(.largeTitle)
@@ -48,6 +47,8 @@ struct ContentView: View {
         .padding()
     }
 }
+
+
 
 #Preview {
     ContentView()
