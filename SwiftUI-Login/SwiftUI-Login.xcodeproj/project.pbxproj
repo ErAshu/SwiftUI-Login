@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F53015E42C1CCCEE00A9CCB9 /* LoginKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53015E32C1CCCEE00A9CCB9 /* LoginKitView.swift */; };
+		F53015E62C1CCEE800A9CCB9 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53015E52C1CCEE800A9CCB9 /* CustomTextField.swift */; };
+		F53015E92C1CD44200A9CCB9 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53015E82C1CD44200A9CCB9 /* View+Extension.swift */; };
+		F53015EB2C1CD5BF00A9CCB9 /* GradientButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53015EA2C1CD5BF00A9CCB9 /* GradientButtonView.swift */; };
 		F5A606042C138197009CD4AF /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A606032C138197009CD4AF /* HeaderView.swift */; };
 		F5AF4D192C0CD592002E97A1 /* InputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AF4D182C0CD592002E97A1 /* InputFieldView.swift */; };
 		F5C8A3332C123BCB00A84DCF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C8A3322C123BCA00A84DCF /* MainView.swift */; };
@@ -17,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F53015E32C1CCCEE00A9CCB9 /* LoginKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginKitView.swift; sourceTree = "<group>"; };
+		F53015E52C1CCEE800A9CCB9 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		F53015E82C1CD44200A9CCB9 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		F53015EA2C1CD5BF00A9CCB9 /* GradientButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButtonView.swift; sourceTree = "<group>"; };
 		F5A606032C138197009CD4AF /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		F5AF4D182C0CD592002E97A1 /* InputFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFieldView.swift; sourceTree = "<group>"; };
 		F5C8A3322C123BCA00A84DCF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -38,6 +46,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F53015E72C1CD42D00A9CCB9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F53015E82C1CD44200A9CCB9 /* View+Extension.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		F5A606022C138157009CD4AF /* Others */ = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +70,9 @@
 				F5CFD0B72C0B833E000B1EB6 /* ContentView.swift */,
 				F5AF4D182C0CD592002E97A1 /* InputFieldView.swift */,
 				F5A606032C138197009CD4AF /* HeaderView.swift */,
+				F53015E32C1CCCEE00A9CCB9 /* LoginKitView.swift */,
+				F53015E52C1CCEE800A9CCB9 /* CustomTextField.swift */,
+				F53015EA2C1CD5BF00A9CCB9 /* GradientButtonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -77,6 +96,7 @@
 		F5CFD0B42C0B833E000B1EB6 /* SwiftUI-Login */ = {
 			isa = PBXGroup;
 			children = (
+				F53015E72C1CD42D00A9CCB9 /* Helpers */,
 				F5A606022C138157009CD4AF /* Others */,
 				F5AF4D172C0CD56A002E97A1 /* Views */,
 				F5CFD0BB2C0B8341000B1EB6 /* Preview Content */,
@@ -162,9 +182,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F53015E62C1CCEE800A9CCB9 /* CustomTextField.swift in Sources */,
 				F5A606042C138197009CD4AF /* HeaderView.swift in Sources */,
+				F53015E92C1CD44200A9CCB9 /* View+Extension.swift in Sources */,
 				F5CFD0B82C0B833E000B1EB6 /* ContentView.swift in Sources */,
+				F53015EB2C1CD5BF00A9CCB9 /* GradientButtonView.swift in Sources */,
 				F5CFD0B62C0B833E000B1EB6 /* SwiftUI_LoginApp.swift in Sources */,
+				F53015E42C1CCCEE00A9CCB9 /* LoginKitView.swift in Sources */,
 				F5C8A3332C123BCB00A84DCF /* MainView.swift in Sources */,
 				F5AF4D192C0CD592002E97A1 /* InputFieldView.swift in Sources */,
 			);
