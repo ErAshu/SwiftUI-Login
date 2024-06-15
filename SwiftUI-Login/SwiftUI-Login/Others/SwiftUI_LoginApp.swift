@@ -11,7 +11,8 @@ import SwiftUI
 struct SwiftUI_LoginApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
+            //MainView()
+            NewLoginView()
         }
     }
 }

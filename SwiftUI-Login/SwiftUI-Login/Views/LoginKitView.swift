@@ -10,8 +10,12 @@
 import SwiftUI
 
 struct LoginKitView: View {
-    @State var email: String = ""
+    @Binding var showSignup: Bool
+    /// View Properies
+    @State var emailID: String = ""
     @State var password: String = ""
+    @State var showForgetPassword: Bool = false
+    @State var showResetView: Bool = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10, content: {
@@ -27,14 +31,14 @@ struct LoginKitView: View {
                 .padding(.top, -5)
             
             VStack(spacing: 25, content: {
-                CustomTextField(sfIcon: "at", iconTint: .gray, hint: "Email ID", value: $email)
+                CustomTextField(sfIcon: "at", iconTint: .gray, hint: "Email ID", value: $emailID)
                
                 CustomTextField(sfIcon: "key", iconTint: .gray, hint: "Password", isPassword: true, value: $password)
                     .padding(.top, 5)
                 
                 
                 Button(action: {
-                    
+                    showForgetPassword.toggle()
                 }, label: {
                     Text("Forget Password")
                         .font(.callout)
@@ -48,7 +52,7 @@ struct LoginKitView: View {
                     
                 }
                 .hSpacing(.trailing)
-                .disableWithOpacity(email.isEmpty || password.isEmpty)
+                .disableWithOpacity(emailID.isEmpty || password.isEmpty)
                 
             })
             .padding(.top, 20)
@@ -57,7 +61,7 @@ struct LoginKitView: View {
                 Text("Don't have an account?")
                     .foregroundStyle(.gray)
                 Button("Sign Up") {
-                    
+                    showSignup.toggle()
                 }
                 .fontWeight(.bold)
                 .tint(.yellow)
@@ -69,9 +73,32 @@ struct LoginKitView: View {
         .padding(.vertical, 15)
         .padding(.horizontal, 25)
         .toolbar(.hidden, for: .navigationBar)
+        /// Asking Email ID for sending Reset Link
+        .sheet(isPresented: $showForgetPassword, content: {
+            if #available(iOS 16.4 , *) {
+                ForgetPasswordView(showResetView: $showResetView)
+                    .presentationDetents([.height(300)])
+                    .presentationCornerRadius(30)
+            }else {
+                ForgetPasswordView(showResetView: $showResetView)
+                    .presentationDetents([.height(300)])
+            }
+        })
+        
+        /// Reset Password
+        .sheet(isPresented: $showResetView, content: {
+            if #available(iOS 16.4 , *) {
+                ResetPasswordView()
+                    .presentationDetents([.height(350)])
+                    .presentationCornerRadius(30)
+            }else {
+                ResetPasswordView()
+                    .presentationDetents([.height(350)])
+            }
+        })
     }
 }
 
 #Preview {
-    LoginKitView()
+    LoginKitView(showSignup: .constant(true))
 }
