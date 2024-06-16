@@ -16,6 +16,7 @@ struct LoginKitView: View {
     @State var password: String = ""
     @State var showForgetPassword: Bool = false
     @State var showResetView: Bool = false
+    @State var showOTPView: Bool = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10, content: {
@@ -49,7 +50,7 @@ struct LoginKitView: View {
                 
                 // Login Button
                 GradientButtonView(title: "Login", icon: "arrow.right") {
-                    
+                    showOTPView.toggle()
                 }
                 .hSpacing(.trailing)
                 .disableWithOpacity(emailID.isEmpty || password.isEmpty)
@@ -93,6 +94,18 @@ struct LoginKitView: View {
                     .presentationCornerRadius(30)
             }else {
                 ResetPasswordView()
+                    .presentationDetents([.height(350)])
+            }
+        })
+        
+        /// Show OTP
+        .sheet(isPresented: $showOTPView, content: {
+            if #available(iOS 16.4 , *) {
+                OTPView()
+                    .presentationDetents([.height(350)])
+                    .presentationCornerRadius(30)
+            }else {
+                OTPView()
                     .presentationDetents([.height(350)])
             }
         })
