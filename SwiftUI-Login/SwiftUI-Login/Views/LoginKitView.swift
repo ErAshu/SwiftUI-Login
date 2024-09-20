@@ -55,6 +55,52 @@ struct LoginKitView: View {
                 .hSpacing(.trailing)
                 .disableWithOpacity(emailID.isEmpty || password.isEmpty)
                 
+                HStack {
+                    Divider()
+                        //.frame(maxWidth:.infinity)
+                        .frame(width:80)
+                        .frame(height:1)
+                        .overlay(.yellow)
+                    
+                    Text("Use another Method")
+                        .font(.system(size: 13, weight: .bold))
+                        .foregroundStyle(.gray)
+                        .lineLimit(1)
+                        .padding()
+                   // Spacer()
+                    Divider()
+                       // .frame(maxWidth:.infinity)
+                        .frame(width:80)
+                        .frame(height:1)
+                        .overlay(.yellow)
+                    
+                }
+                
+                Button(action: {
+                    print("Tapped SignIn with Google")
+                },label: {
+                    Text("Login with Google")
+                        .font(.system(size: 14, weight: .bold))
+                        .foregroundStyle(.black)
+                        
+                })
+                .frame(maxWidth: .infinity)
+                .frame(height: 44)
+                .background(.linearGradient(colors: [.yellow], startPoint: .top, endPoint: .bottom), in: .capsule)
+              
+                
+                Button(action: {
+                    print("Tapped SignIn with Apple")
+                },label: {
+                    Text("SignIn with Apple")
+                        .font(.system(size: 14, weight: .bold))
+                        .foregroundStyle(.white)
+                        
+                })
+                .frame(maxWidth: .infinity)
+                .frame(height: 44)
+                .background(.linearGradient(colors: [.black], startPoint: .top, endPoint: .bottom), in: .capsule)
+                
             })
             .padding(.top, 20)
             Spacer(minLength: 0)
